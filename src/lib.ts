@@ -26,7 +26,7 @@ function findFile(report: Lcov, file: string) {
   return report.find((r) => r.file === file);
 }
 
-export async function generateCoverageDiff(before: Lcov, after: Lcov) {
+export function generateCoverageDiff(before: Lcov, after: Lcov) {
   let content =
     "| File | Line Coverage | Function Coverage | Branch Coverage |\n| --- | ---: | ---: | ---: |\n";
   for (const report of after) {

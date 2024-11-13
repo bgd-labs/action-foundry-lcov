@@ -30,6 +30,6 @@ type Lcov = {
     };
 }[];
 
-declare function generateCoverageDiff(before: Lcov, after: Lcov): Promise<string>;
+declare function generateCoverageDiff(before: Lcov, after: Lcov): string;
 
 export { generateCoverageDiff };

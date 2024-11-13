@@ -42,7 +42,7 @@ function getCoverageLine({
 function findFile(report, file) {
   return report.find((r) => r.file === file);
 }
-async function generateCoverageDiff(before, after) {
+function generateCoverageDiff(before, after) {
   let content = "| File | Line Coverage | Function Coverage | Branch Coverage |\n| --- | ---: | ---: | ---: |\n";
   for (const report of after) {
     const previousRunResult = findFile(before, report.file);
