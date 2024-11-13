@@ -19989,9 +19989,9 @@ function formatCoverageLine({ hit, found }, previousCoverage) {
   const diff = !previousCoverage || coverage === previousCoverage ? 0 : (coverage - previousCoverage) / Math.abs(previousCoverage) * 100;
   let formattedString = formatCoverage(coverage);
   if (diff)
-    formattedString = `^${diff > 0 ? UP : DOWN}` + new Intl.NumberFormat("en-US", {
+    formattedString = `^{${diff > 0 ? UP : DOWN}` + new Intl.NumberFormat("en-US", {
       maximumSignificantDigits: 2
-    }).format(diff) + "%" + formattedString;
+    }).format(diff) + "%}" + formattedString;
   return `$${formattedString}$<br />$${hit} / ${found}$`;
 }
 function findFile(report, file) {
@@ -20052,7 +20052,7 @@ async function main() {
     "report",
     `<details><summary>:crystal_ball: <strong>Coverage report</strong></summary>
 
-${content.replace(/\\/g, "\\\\").replace(/\$/g, "\\$").replace(/\%/g, "\\%")}
+${content.replace(/\\/g, "\\\\").replace(/\$/g, "\\$").replace(/\%/g, "\\\\%")}
 
 </details>`
   );

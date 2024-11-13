@@ -26,7 +26,7 @@ async function main() {
 
   setOutput(
     "report",
-    `<details><summary>:crystal_ball: <strong>Coverage report</strong></summary>\n\n${content.replace(/\\/g, "\\\\").replace(/\$/g, "\\$").replace(/\%/g, "\\%")}\n\n</details>`,
+    `<details><summary>:crystal_ball: <strong>Coverage report</strong></summary>\n\n${content.replace(/\\/g, "\\\\").replace(/\$/g, "\\$").replace(/\%/g, "\\\\%")}\n\n</details>`,
   );
 }
 main();
