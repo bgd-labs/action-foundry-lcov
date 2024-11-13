@@ -8,7 +8,7 @@ function formatCoverage(coverage: number) {
   if (coverage > 0.8) color = "orange";
   if (coverage > 0.95) color = "lightgreen";
   if (coverage === 1) color = "green";
-  return "{\\color{" + color + "}" + percent + "\\%}";
+  return "{\\color{" + color + "}" + percent + "%}";
 }
 
 type GetCoverageLineParams = {
@@ -35,7 +35,7 @@ function formatCoverageLine(
       new Intl.NumberFormat("en-US", {
         maximumSignificantDigits: 2,
       }).format(diff) +
-      "\\%" +
+      "%" +
       formattedString;
 
   return `$${formattedString}$<br />$${hit} / ${found}$`;

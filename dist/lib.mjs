@@ -7,7 +7,7 @@ function formatCoverage(coverage) {
   if (coverage > 0.8) color = "orange";
   if (coverage > 0.95) color = "lightgreen";
   if (coverage === 1) color = "green";
-  return "{\\color{" + color + "}" + percent + "\\%}";
+  return "{\\color{" + color + "}" + percent + "%}";
 }
 var UP = `\u2191`;
 var DOWN = `\u2193`;
@@ -18,7 +18,7 @@ function formatCoverageLine({ hit, found }, previousCoverage) {
   if (diff)
     formattedString = `^${diff > 0 ? UP : DOWN}` + new Intl.NumberFormat("en-US", {
       maximumSignificantDigits: 2
-    }).format(diff) + "\\%" + formattedString;
+    }).format(diff) + "%" + formattedString;
   return `$${formattedString}$<br />$${hit} / ${found}$`;
 }
 function findFile(report, file) {
