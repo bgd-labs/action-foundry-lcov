@@ -1,0 +1,21 @@
+name: "foundry-lcov"
+description: "Generates a html gas report diffing two json gas-report files"
+inputs:
+  ROOT_REPORT_PATH:
+    description: "The path to the lcov.info to diff against. If empty it will not diff, but just pretty print the report."
+    required: false
+  REPORT_PATH:
+    description: "The path to the lcov.info."
+    required: true
+  COVERAGE_COMMAND:
+    description: "The command to run to generate the coverage report."
+    default: 'forge coverage --fuzz-runs 1 --report lcov --no-match-coverage "(.t.sol|.s.sol|deployments|mocks)"'
+    required: false
+
+outputs:
+  report:
+    description: "The md lcov report"
+
+runs:
+  using: "node20"
+  main: dist/action.js

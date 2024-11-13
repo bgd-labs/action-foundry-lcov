@@ -1,0 +1,56 @@
+{
+  "name": "@bgd-labs/action-foundry-lcov",
+  "version": "1.0.0",
+  "description": "Action to generate a coverage report for foundry projects.",
+  "files": [
+    "src/lib.ts",
+    "dist/lib.d.mts",
+    "dist/lib.d.ts",
+    "dist/lib.js",
+    "dist/lib.mjs"
+  ],
+  "main": "./dist/lib.js",
+  "module": "./dist/lib.mjs",
+  "types": "./dist/lib.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/lib.d.mts",
+        "default": "./dist/lib.js"
+      },
+      "import": {
+        "types": "./dist/lib.d.mts",
+        "default": "./dist/lib.mjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest"
+  },
+  "author": "BGD Labs",
+  "license": "MIT",
+  "devDependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "@types/node": "^22.9.0",
+    "lcov-parse": "^1.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  },
+  "tsup": {
+    "entry": [
+      "src/action.ts",
+      "src/lib.ts"
+    ],
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true,
+    "dts": true,
+    "format": [
+      "esm",
+      "cjs"
+    ]
+  }
+}
