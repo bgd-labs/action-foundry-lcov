@@ -63,16 +63,24 @@ export function generateCoverageDiff(before: Lcov, after: Lcov) {
       report.lines,
       previousRunResult ? getCoverage(previousRunResult.lines) : 0,
     );
+    const missedLines = report.lines.details
+      .filter((line) => line.hit === 0)
+      .map((line) => `[${line.line}](${report.file}#L${line.line})`)
+      .join(",");
     const functionCoverage = formatCoverageLine(
       report.functions,
       previousRunResult ? getCoverage(previousRunResult.functions) : 0,
     );
+    const missedFunctions = report.functions.details
+      .filter((line) => line.hit === 0)
+      .map((line) => `[${line.name}](${report.file}#L${line.line})`)
+      .join(",");
     const branchCoverage = formatCoverageLine(
       report.branches,
       previousRunResult ? getCoverage(previousRunResult.branches) : 0,
     );
 
-    content += `| ${report.file} | ${lineCoverage} | ${functionCoverage} | ${branchCoverage} |\n`;
+    content += `| ${report.file} | ${lineCoverage}<br />${missedLines} | ${functionCoverage}<br />${missedFunctions} | ${branchCoverage} |\n`;
   }
   return content;
 }
