@@ -31,7 +31,7 @@ function formatCoverageLine(
   let formattedString = formatCoverage(coverage);
   if (diff)
     formattedString =
-      "^" +
+      `^${diff > 0 ? UP : DOWN}` +
       new Intl.NumberFormat("en-US", {
         maximumSignificantDigits: 2,
       }).format(diff) +

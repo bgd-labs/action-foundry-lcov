@@ -9,12 +9,14 @@ function formatCoverage(coverage) {
   if (coverage === 1) color = "green";
   return "{\\color{" + color + "}" + percent + "\\%}";
 }
+var UP = `\u2191`;
+var DOWN = `\u2193`;
 function formatCoverageLine({ hit, found }, previousCoverage) {
   const coverage = getCoverage({ hit, found });
   const diff = !previousCoverage || coverage === previousCoverage ? 0 : (coverage - previousCoverage) / Math.abs(previousCoverage) * 100;
   let formattedString = formatCoverage(coverage);
   if (diff)
-    formattedString = "^" + new Intl.NumberFormat("en-US", {
+    formattedString = `^${diff > 0 ? UP : DOWN}` + new Intl.NumberFormat("en-US", {
       maximumSignificantDigits: 2
     }).format(diff) + "\\%" + formattedString;
   return `$${formattedString}$<br />$${hit} / ${found}$`;
