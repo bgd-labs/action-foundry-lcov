@@ -1,15 +1,14 @@
 import { Lcov } from "./lcov-parse";
 
 function formatCoverage(coverage: number) {
-  const percent =
-    Number(coverage * 100).toLocaleString("en-US", {
-      maximumFractionDigits: 2,
-    }) + "\\%"; // needs to be escaped as we're escaping for latex
+  const percent = Number(coverage * 100).toLocaleString("en-US", {
+    maximumFractionDigits: 2,
+  });
   let color = "red";
   if (coverage > 0.8) color = "orange";
   if (coverage > 0.95) color = "lightgreen";
   if (coverage === 1) color = "green";
-  return "\\$\\${\\color{" + color + "}" + percent + "}\\$\\$";
+  return "\\$\\${\\\\color{" + color + "}" + percent + "\\\\%}\\$\\$";
 }
 
 function getCoverageLine({

@@ -2,12 +2,12 @@
 function formatCoverage(coverage) {
   const percent = Number(coverage * 100).toLocaleString("en-US", {
     maximumFractionDigits: 2
-  }) + "\\%";
+  });
   let color = "red";
   if (coverage > 0.8) color = "orange";
   if (coverage > 0.95) color = "lightgreen";
   if (coverage === 1) color = "green";
-  return "\\$\\${\\color{" + color + "}" + percent + "}\\$\\$";
+  return "\\$\\${\\\\color{" + color + "}" + percent + "\\\\%}\\$\\$";
 }
 function getCoverageLine({
   hit,
