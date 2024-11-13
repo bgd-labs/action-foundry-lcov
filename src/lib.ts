@@ -31,6 +31,7 @@ export async function generateCoverageDiff(before: Lcov, after: Lcov) {
     "| File | Line Coverage | Function Coverage | Branch Coverage |\n| --- | ---: | ---: | ---: |\n";
   for (const report of after) {
     const previousRunResult = findFile(before, report.file);
+    // do sth
     const lineCoverage = getCoverageLine(report.lines);
     const functionCoverage = getCoverageLine(report.functions);
     const branchCoverage = getCoverageLine(report.branches);
