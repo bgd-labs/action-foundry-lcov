@@ -20052,7 +20052,7 @@ async function main() {
     "report",
     `<details><summary>:crystal_ball: <strong>Coverage report</strong></summary>
 
-${content.replace(/\\/g, "\\\\\\\\").replace(/\$/g, "\\\\$")}
+${content.replace(/\\/g, "\\\\").replace(/\$/g, "\\$")}
 
 </details>`
   );
