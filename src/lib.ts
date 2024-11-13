@@ -8,7 +8,7 @@ function formatCoverage(coverage: number) {
   if (coverage > 0.8) color = "orange";
   if (coverage > 0.95) color = "lightgreen";
   if (coverage === 1) color = "green";
-  return "{\\color{" + color + "}" + percent + "%}";
+  return "{\\\\color{" + color + "}" + percent + "\\\\\\\\%}";
 }
 
 type GetCoverageLineParams = {
@@ -35,10 +35,10 @@ function formatCoverageLine(
       new Intl.NumberFormat("en-US", {
         maximumSignificantDigits: 2,
       }).format(diff) +
-      "%}" +
+      "\\\\\\\\%}" +
       formattedString;
 
-  return `$${formattedString}$<br />$${hit} / ${found}$`;
+  return `\\$${formattedString}\\$<br />\\$${hit} / ${found}\\$`;
 }
 
 function findFile(report: Lcov, file: string) {
@@ -54,7 +54,15 @@ function getCoverage({ hit, found }: GetCoverageParams) {
   return found == 0 ? 1 : hit / found;
 }
 
-export function generateCoverageDiff(before: Lcov, after: Lcov) {
+type Options = {
+  rootUrl: string;
+};
+
+export function generateCoverageDiff(
+  before: Lcov,
+  after: Lcov,
+  { rootUrl }: Options,
+) {
   let content =
     "| File | Line Coverage | Function Coverage | Branch Coverage |\n| --- | ---: | ---: | ---: |\n";
   for (const report of after) {
@@ -65,16 +73,16 @@ export function generateCoverageDiff(before: Lcov, after: Lcov) {
     );
     const missedLines = report.lines.details
       .filter((line) => line.hit === 0)
-      .map((line) => `[${line.line}](${report.file}#L${line.line})`)
-      .join(",");
+      .map((line) => `[${line.line}](${rootUrl}${report.file}#L${line.line})`)
+      .join(", ");
     const functionCoverage = formatCoverageLine(
       report.functions,
       previousRunResult ? getCoverage(previousRunResult.functions) : 0,
     );
     const missedFunctions = report.functions.details
       .filter((line) => line.hit === 0)
-      .map((line) => `[${line.name}](${report.file}#L${line.line})`)
-      .join(",");
+      .map((line) => `[${line.name}](${rootUrl}${report.file}#L${line.line})`)
+      .join("<br />");
     const branchCoverage = formatCoverageLine(
       report.branches,
       previousRunResult ? getCoverage(previousRunResult.branches) : 0,

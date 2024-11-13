@@ -22,11 +22,12 @@ async function main() {
   const content = generateCoverageDiff(
     rootExists ? await parseLcov(root) : [],
     await parseLcov(current),
+    { rootUrl: `${context.payload.repository?.html_url}/blob/${context.sha}/` },
   );
 
   setOutput(
     "report",
-    `<details><summary>:crystal_ball: <strong>Coverage report</strong></summary>\n\n${content.replace(/\\/g, "\\\\").replace(/\$/g, "\\$").replace(/\%/g, "\\\\\\\\%")}\n\n</details>`,
+    `<details><summary>:crystal_ball: <strong>Coverage report</strong></summary>\n\n${content}\n\n</details>`,
   );
 }
 main();
