@@ -7,7 +7,7 @@ function formatCoverage(coverage) {
   if (coverage > 0.8) color = "orange";
   if (coverage > 0.95) color = "lightgreen";
   if (coverage === 1) color = "green";
-  return "\\$\\${\\color{" + color + "}" + percent + "\\$\\$";
+  return "\\$\\${\\color{" + color + "}" + percent + "}\\$\\$";
 }
 function getCoverageLine({
   hit,
