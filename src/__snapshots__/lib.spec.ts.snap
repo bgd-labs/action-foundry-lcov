@@ -3,47 +3,47 @@
 exports[`lib > should generate a well formatted coverage report with empty root 1`] = `
 "| File | Line Coverage | Function Coverage | Branch Coverage |
 | --- | ---: | ---: | ---: |
-| src/contracts/access-control/OwnableWithGuardian.sol | \\$\\\${\\\\color{red}70\\\\%}\\$\\$<br />7 / 10 | \\$\\\${\\\\color{red}62.5\\\\%}\\$\\$<br />5 / 8 | \\$\\\${\\\\color{red}50\\\\%}\\$\\$<br />2 / 4 |
-| src/contracts/access-control/UpgradeableOwnableWithGuardian.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />14 / 14 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />9 / 9 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 |
-| src/contracts/create3/Create3.sol | \\$\\\${\\\\color{orange}92.86\\\\%}\\$\\$<br />13 / 14 | \\$\\\${\\\\color{red}80\\\\%}\\$\\$<br />4 / 5 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 3 |
-| src/contracts/create3/Create3Factory.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/oz-common/Ownable.sol | \\$\\\${\\\\color{red}80\\\\%}\\$\\$<br />8 / 10 | \\$\\\${\\\\color{red}71.43\\\\%}\\$\\$<br />5 / 7 | \\$\\\${\\\\color{red}50\\\\%}\\$\\$<br />2 / 4 |
-| src/contracts/oz-common/SafeERC20.sol | \\$\\\${\\\\color{red}13.64\\\\%}\\$\\$<br />3 / 22 | \\$\\\${\\\\color{red}25\\\\%}\\$\\$<br />2 / 8 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 4 |
-| src/contracts/transparent-proxy/ERC1967Proxy.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/ERC1967Upgrade.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />13 / 13 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />7 / 7 | \\$\\\${\\\\color{red}60\\\\%}\\$\\$<br />3 / 5 |
-| src/contracts/transparent-proxy/Initializable.sol | \\$\\\${\\\\color{red}68.42\\\\%}\\$\\$<br />13 / 19 | \\$\\\${\\\\color{red}60\\\\%}\\$\\$<br />3 / 5 | \\$\\\${\\\\color{red}45.45\\\\%}\\$\\$<br />5 / 11 |
-| src/contracts/transparent-proxy/Proxy.sol | \\$\\\${\\\\color{orange}90\\\\%}\\$\\$<br />9 / 10 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/ProxyAdmin.sol | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 9 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 5 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 4 |
-| src/contracts/transparent-proxy/TransparentProxyFactory.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/TransparentProxyFactoryBase.sol | \\$\\\${\\\\color{red}58.82\\\\%}\\$\\$<br />10 / 17 | \\$\\\${\\\\color{red}66.67\\\\%}\\$\\$<br />4 / 6 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/TransparentUpgradeableProxy.sol | \\$\\\${\\\\color{red}27.27\\\\%}\\$\\$<br />3 / 11 | \\$\\\${\\\\color{red}22.22\\\\%}\\$\\$<br />2 / 9 | \\$\\\${\\\\color{red}25\\\\%}\\$\\$<br />1 / 4 |
-| src/contracts/utils/PermissionlessRescuable.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/utils/Rescuable.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />3 / 3 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 |
-| src/contracts/utils/Rescuable721.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/utils/RescuableBase.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />8 / 8 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 |
+| src/contracts/access-control/OwnableWithGuardian.sol | \\$\\\${\\\\\\\\color{red}70\\\\\\\\%}\\$\\$<br />7 / 10 | \\$\\\${\\\\\\\\color{red}62.5\\\\\\\\%}\\$\\$<br />5 / 8 | \\$\\\${\\\\\\\\color{red}50\\\\\\\\%}\\$\\$<br />2 / 4 |
+| src/contracts/access-control/UpgradeableOwnableWithGuardian.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />14 / 14 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />9 / 9 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 |
+| src/contracts/create3/Create3.sol | \\$\\\${\\\\\\\\color{orange}92.86\\\\\\\\%}\\$\\$<br />13 / 14 | \\$\\\${\\\\\\\\color{red}80\\\\\\\\%}\\$\\$<br />4 / 5 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 3 |
+| src/contracts/create3/Create3Factory.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/oz-common/Ownable.sol | \\$\\\${\\\\\\\\color{red}80\\\\\\\\%}\\$\\$<br />8 / 10 | \\$\\\${\\\\\\\\color{red}71.43\\\\\\\\%}\\$\\$<br />5 / 7 | \\$\\\${\\\\\\\\color{red}50\\\\\\\\%}\\$\\$<br />2 / 4 |
+| src/contracts/oz-common/SafeERC20.sol | \\$\\\${\\\\\\\\color{red}13.64\\\\\\\\%}\\$\\$<br />3 / 22 | \\$\\\${\\\\\\\\color{red}25\\\\\\\\%}\\$\\$<br />2 / 8 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 4 |
+| src/contracts/transparent-proxy/ERC1967Proxy.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/ERC1967Upgrade.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />13 / 13 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />7 / 7 | \\$\\\${\\\\\\\\color{red}60\\\\\\\\%}\\$\\$<br />3 / 5 |
+| src/contracts/transparent-proxy/Initializable.sol | \\$\\\${\\\\\\\\color{red}68.42\\\\\\\\%}\\$\\$<br />13 / 19 | \\$\\\${\\\\\\\\color{red}60\\\\\\\\%}\\$\\$<br />3 / 5 | \\$\\\${\\\\\\\\color{red}45.45\\\\\\\\%}\\$\\$<br />5 / 11 |
+| src/contracts/transparent-proxy/Proxy.sol | \\$\\\${\\\\\\\\color{orange}90\\\\\\\\%}\\$\\$<br />9 / 10 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/ProxyAdmin.sol | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 9 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 5 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 4 |
+| src/contracts/transparent-proxy/TransparentProxyFactory.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/TransparentProxyFactoryBase.sol | \\$\\\${\\\\\\\\color{red}58.82\\\\\\\\%}\\$\\$<br />10 / 17 | \\$\\\${\\\\\\\\color{red}66.67\\\\\\\\%}\\$\\$<br />4 / 6 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/TransparentUpgradeableProxy.sol | \\$\\\${\\\\\\\\color{red}27.27\\\\\\\\%}\\$\\$<br />3 / 11 | \\$\\\${\\\\\\\\color{red}22.22\\\\\\\\%}\\$\\$<br />2 / 9 | \\$\\\${\\\\\\\\color{red}25\\\\\\\\%}\\$\\$<br />1 / 4 |
+| src/contracts/utils/PermissionlessRescuable.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/utils/Rescuable.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />3 / 3 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 |
+| src/contracts/utils/Rescuable721.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/utils/RescuableBase.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />8 / 8 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 |
 "
 `;
 
 exports[`lib > should generate a well formatted report with existing root 1`] = `
 "| File | Line Coverage | Function Coverage | Branch Coverage |
 | --- | ---: | ---: | ---: |
-| src/contracts/access-control/OwnableWithGuardian.sol | \\$\\\${\\\\color{red}70\\\\%}\\$\\$<br />7 / 10 | \\$\\\${\\\\color{red}62.5\\\\%}\\$\\$<br />5 / 8 | \\$\\\${\\\\color{red}50\\\\%}\\$\\$<br />2 / 4 |
-| src/contracts/access-control/UpgradeableOwnableWithGuardian.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />14 / 14 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />9 / 9 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 |
-| src/contracts/create3/Create3.sol | \\$\\\${\\\\color{orange}92.86\\\\%}\\$\\$<br />13 / 14 | \\$\\\${\\\\color{red}80\\\\%}\\$\\$<br />4 / 5 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 3 |
-| src/contracts/create3/Create3Factory.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/oz-common/Ownable.sol | \\$\\\${\\\\color{red}80\\\\%}\\$\\$<br />8 / 10 | \\$\\\${\\\\color{red}71.43\\\\%}\\$\\$<br />5 / 7 | \\$\\\${\\\\color{red}50\\\\%}\\$\\$<br />2 / 4 |
-| src/contracts/oz-common/SafeERC20.sol | \\$\\\${\\\\color{red}13.64\\\\%}\\$\\$<br />3 / 22 | \\$\\\${\\\\color{red}25\\\\%}\\$\\$<br />2 / 8 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 4 |
-| src/contracts/transparent-proxy/ERC1967Proxy.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/ERC1967Upgrade.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />13 / 13 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />7 / 7 | \\$\\\${\\\\color{red}60\\\\%}\\$\\$<br />3 / 5 |
-| src/contracts/transparent-proxy/Initializable.sol | \\$\\\${\\\\color{red}68.42\\\\%}\\$\\$<br />13 / 19 | \\$\\\${\\\\color{red}60\\\\%}\\$\\$<br />3 / 5 | \\$\\\${\\\\color{red}45.45\\\\%}\\$\\$<br />5 / 11 |
-| src/contracts/transparent-proxy/Proxy.sol | \\$\\\${\\\\color{orange}90\\\\%}\\$\\$<br />9 / 10 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/ProxyAdmin.sol | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 9 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 5 | \\$\\\${\\\\color{red}0\\\\%}\\$\\$<br />0 / 4 |
-| src/contracts/transparent-proxy/TransparentProxyFactory.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/TransparentProxyFactoryBase.sol | \\$\\\${\\\\color{red}58.82\\\\%}\\$\\$<br />10 / 17 | \\$\\\${\\\\color{red}66.67\\\\%}\\$\\$<br />4 / 6 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/transparent-proxy/TransparentUpgradeableProxy.sol | \\$\\\${\\\\color{red}27.27\\\\%}\\$\\$<br />3 / 11 | \\$\\\${\\\\color{red}22.22\\\\%}\\$\\$<br />2 / 9 | \\$\\\${\\\\color{red}25\\\\%}\\$\\$<br />1 / 4 |
-| src/contracts/utils/PermissionlessRescuable.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/utils/Rescuable.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />3 / 3 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 |
-| src/contracts/utils/Rescuable721.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />0 / 0 |
-| src/contracts/utils/RescuableBase.sol | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />8 / 8 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\color{green}100\\\\%}\\$\\$<br />1 / 1 |
+| src/contracts/access-control/OwnableWithGuardian.sol | \\$\\\${\\\\\\\\color{red}70\\\\\\\\%}\\$\\$<br />7 / 10 | \\$\\\${\\\\\\\\color{red}62.5\\\\\\\\%}\\$\\$<br />5 / 8 | \\$\\\${\\\\\\\\color{red}50\\\\\\\\%}\\$\\$<br />2 / 4 |
+| src/contracts/access-control/UpgradeableOwnableWithGuardian.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />14 / 14 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />9 / 9 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 |
+| src/contracts/create3/Create3.sol | \\$\\\${\\\\\\\\color{orange}92.86\\\\\\\\%}\\$\\$<br />13 / 14 | \\$\\\${\\\\\\\\color{red}80\\\\\\\\%}\\$\\$<br />4 / 5 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 3 |
+| src/contracts/create3/Create3Factory.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/oz-common/Ownable.sol | \\$\\\${\\\\\\\\color{red}80\\\\\\\\%}\\$\\$<br />8 / 10 | \\$\\\${\\\\\\\\color{red}71.43\\\\\\\\%}\\$\\$<br />5 / 7 | \\$\\\${\\\\\\\\color{red}50\\\\\\\\%}\\$\\$<br />2 / 4 |
+| src/contracts/oz-common/SafeERC20.sol | \\$\\\${\\\\\\\\color{red}13.64\\\\\\\\%}\\$\\$<br />3 / 22 | \\$\\\${\\\\\\\\color{red}25\\\\\\\\%}\\$\\$<br />2 / 8 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 4 |
+| src/contracts/transparent-proxy/ERC1967Proxy.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/ERC1967Upgrade.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />13 / 13 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />7 / 7 | \\$\\\${\\\\\\\\color{red}60\\\\\\\\%}\\$\\$<br />3 / 5 |
+| src/contracts/transparent-proxy/Initializable.sol | \\$\\\${\\\\\\\\color{red}68.42\\\\\\\\%}\\$\\$<br />13 / 19 | \\$\\\${\\\\\\\\color{red}60\\\\\\\\%}\\$\\$<br />3 / 5 | \\$\\\${\\\\\\\\color{red}45.45\\\\\\\\%}\\$\\$<br />5 / 11 |
+| src/contracts/transparent-proxy/Proxy.sol | \\$\\\${\\\\\\\\color{orange}90\\\\\\\\%}\\$\\$<br />9 / 10 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/ProxyAdmin.sol | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 9 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 5 | \\$\\\${\\\\\\\\color{red}0\\\\\\\\%}\\$\\$<br />0 / 4 |
+| src/contracts/transparent-proxy/TransparentProxyFactory.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/TransparentProxyFactoryBase.sol | \\$\\\${\\\\\\\\color{red}58.82\\\\\\\\%}\\$\\$<br />10 / 17 | \\$\\\${\\\\\\\\color{red}66.67\\\\\\\\%}\\$\\$<br />4 / 6 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/transparent-proxy/TransparentUpgradeableProxy.sol | \\$\\\${\\\\\\\\color{red}27.27\\\\\\\\%}\\$\\$<br />3 / 11 | \\$\\\${\\\\\\\\color{red}22.22\\\\\\\\%}\\$\\$<br />2 / 9 | \\$\\\${\\\\\\\\color{red}25\\\\\\\\%}\\$\\$<br />1 / 4 |
+| src/contracts/utils/PermissionlessRescuable.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/utils/Rescuable.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />4 / 4 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />3 / 3 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 |
+| src/contracts/utils/Rescuable721.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />0 / 0 |
+| src/contracts/utils/RescuableBase.sol | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />8 / 8 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />2 / 2 | \\$\\\${\\\\\\\\color{green}100\\\\\\\\%}\\$\\$<br />1 / 1 |
 "
 `;
