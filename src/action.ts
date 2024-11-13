@@ -22,6 +22,7 @@ async function main() {
   const content = generateCoverageDiff(
     rootExists ? await parseLcov(root) : [],
     await parseLcov(current),
+    { rootUrl: `${context.payload.repository?.html_url}/blob/${context.sha}/` },
   );
 
   setOutput(

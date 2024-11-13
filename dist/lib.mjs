@@ -2,30 +2,50 @@
 function formatCoverage(coverage) {
   const percent = Number(coverage * 100).toLocaleString("en-US", {
     maximumFractionDigits: 2
-  }) + "\\\\%";
-  if (coverage === 1) return `$\${\\\\color{green}${percent}}$$`;
-  if (coverage > 0.95) return `$\${\\\\color{lightgreen}${percent}}$$`;
-  if (coverage > 0.8) return `$\${\\\\color{orange}${percent}}$$`;
-  return `$\${\\\\color{red}${percent}}$$`;
+  });
+  let color = "red";
+  if (coverage > 0.8) color = "orange";
+  if (coverage > 0.95) color = "lightgreen";
+  if (coverage === 1) color = "green";
+  return "{\\\\color{" + color + "}" + percent + "\\\\\\\\%}";
 }
-function getCoverageLine({
-  hit,
-  found
-}) {
-  let percent = found == 0 ? 1 : hit / found;
-  return `${formatCoverage(percent)}<br />${hit} / ${found}`;
+var UP = `\u2191`;
+var DOWN = `\u2193`;
+function formatCoverageLine({ hit, found }, previousCoverage) {
+  const coverage = getCoverage({ hit, found });
+  const diff = !previousCoverage || coverage === previousCoverage ? 0 : (coverage - previousCoverage) / Math.abs(previousCoverage) * 100;
+  let formattedString = formatCoverage(coverage);
+  if (diff)
+    formattedString = `^{${diff > 0 ? UP : DOWN}` + new Intl.NumberFormat("en-US", {
+      maximumSignificantDigits: 2
+    }).format(diff) + "\\\\\\\\%}" + formattedString;
+  return `\\$${formattedString}\\$<br />\\$${hit} / ${found}\\$`;
 }
 function findFile(report, file) {
   return report.find((r) => r.file === file);
 }
-async function generateCoverageDiff(before, after) {
+function getCoverage({ hit, found }) {
+  return found == 0 ? 1 : hit / found;
+}
+function generateCoverageDiff(before, after, { rootUrl }) {
   let content = "| File | Line Coverage | Function Coverage | Branch Coverage |\n| --- | ---: | ---: | ---: |\n";
   for (const report of after) {
     const previousRunResult = findFile(before, report.file);
-    const lineCoverage = getCoverageLine(report.lines);
-    const functionCoverage = getCoverageLine(report.functions);
-    const branchCoverage = getCoverageLine(report.branches);
-    content += `| ${report.file} | ${lineCoverage} | ${functionCoverage} | ${branchCoverage} |
+    const lineCoverage = formatCoverageLine(
+      report.lines,
+      previousRunResult ? getCoverage(previousRunResult.lines) : 0
+    );
+    const missedLines = report.lines.details.filter((line) => line.hit === 0).map((line) => `[${line.line}](${rootUrl}${report.file}#L${line.line})`).join(", ");
+    const functionCoverage = formatCoverageLine(
+      report.functions,
+      previousRunResult ? getCoverage(previousRunResult.functions) : 0
+    );
+    const missedFunctions = report.functions.details.filter((line) => line.hit === 0).map((line) => `[${line.name}](${rootUrl}${report.file}#L${line.line})`).join("<br />");
+    const branchCoverage = formatCoverageLine(
+      report.branches,
+      previousRunResult ? getCoverage(previousRunResult.branches) : 0
+    );
+    content += `| ${report.file} | ${lineCoverage}<br />${missedLines} | ${functionCoverage}<br />${missedFunctions} | ${branchCoverage} |
 `;
   }
   return content;
