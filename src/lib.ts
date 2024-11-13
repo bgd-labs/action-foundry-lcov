@@ -4,11 +4,12 @@ function formatCoverage(coverage: number) {
   const percent =
     Number(coverage * 100).toLocaleString("en-US", {
       maximumFractionDigits: 2,
-    }) + "\\\\%"; // needs to be escaped as we're escaping for latex
-  if (coverage === 1) return `\$\${\\\\color{green}${percent}}\$\$`;
-  if (coverage > 0.95) return `\$\${\\\\color{lightgreen}${percent}}\$\$`;
-  if (coverage > 0.8) return `\$\${\\\\color{orange}${percent}}\$\$`;
-  return `\$\${\\\\color{red}${percent}}\$\$`;
+    }) + "\\%"; // needs to be escaped as we're escaping for latex
+  let color = "red";
+  if (coverage > 0.8) color = "orange";
+  if (coverage > 0.95) color = "lightgreen";
+  if (coverage === 1) color = "green";
+  return "$${\\color{" + color + "}" + percent + "$$";
 }
 
 function getCoverageLine({
