@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from "fs";
+import { existsSync } from "fs";
 import { getInput, setOutput } from "@actions/core";
 import { context } from "@actions/github";
 import { generateCoverageDiff } from "./lib";

@@ -9,7 +9,7 @@ inputs:
     required: true
   COVERAGE_COMMAND:
     description: "The command to run to generate the coverage report."
-    default: 'forge coverage --fuzz-runs 1 --report lcov --no-match-coverage "(.t.sol|.s.sol|deployments|mocks)"'
+    default: 'forge coverage --fuzz-runs 1 --report lcov --no-match-coverage "(test|script|.t.sol|.s.sol|deployment|mock)"'
     required: false
 
 outputs:
