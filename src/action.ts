@@ -10,7 +10,13 @@ const current = getInput("REPORT_PATH");
 const command = getInput("COVERAGE_COMMAND");
 
 if (command && command != "false") {
-  execSync(command);
+  try {
+    execSync(command);
+  } catch (err) {
+    console.log("output", err);
+    console.log("sdterr", (err as any).stderr.toString());
+    process.exit(1);
+  }
 }
 
 const rootExists = root && existsSync(root);

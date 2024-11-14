@@ -24144,7 +24144,13 @@ var root = (0, import_core.getInput)("ROOT_REPORT_PATH");
 var current = (0, import_core.getInput)("REPORT_PATH");
 var command = (0, import_core.getInput)("COVERAGE_COMMAND");
 if (command && command != "false") {
-  (0, import_child_process.execSync)(command);
+  try {
+    (0, import_child_process.execSync)(command);
+  } catch (err) {
+    console.log("output", err);
+    console.log("sdterr", err.stderr.toString());
+    process.exit(1);
+  }
 }
 var rootExists = root && (0, import_fs.existsSync)(root);
 var currentExists = current && (0, import_fs.existsSync)(current);
