@@ -1,5 +1,8 @@
 import { Lcov } from "./lcov-parse";
 
+/**
+ * wraps number in latex color command
+ */
 function formatCoverage(coverage: number) {
   const percent = Number(coverage * 100).toLocaleString("en-US", {
     maximumFractionDigits: 2,
