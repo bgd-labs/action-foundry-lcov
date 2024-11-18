@@ -1,5 +1,8 @@
 import { Lcov } from "./lcov-parse";
 
+/**
+ * wraps number in latex color command
+ */
 function formatCoverage(coverage: number) {
   const percent = Number(coverage * 100).toLocaleString("en-US", {
     maximumFractionDigits: 2,
@@ -58,6 +61,13 @@ type Options = {
   rootUrl: string;
 };
 
+function formatDetails<T>(items: T[], formatFn: (input: T) => string) {
+  let content = items.map((item) => formatFn(item));
+  if (items.length > 5)
+    return content.slice(0, 5).join(", ") + ` and ${items.length - 5} more`;
+  return content.join(", ");
+}
+
 export function generateCoverageDiff(
   before: Lcov,
   after: Lcov,
@@ -71,18 +81,19 @@ export function generateCoverageDiff(
       report.lines,
       previousRunResult ? getCoverage(previousRunResult.lines) : 0,
     );
-    const missedLines = report.lines.details
-      .filter((line) => line.hit === 0)
-      .map((line) => `[${line.line}](${rootUrl}${report.file}#L${line.line})`)
-      .join(", ");
+    const missedLines = formatDetails(
+      report.lines.details.filter((line) => line.hit === 0),
+      (line) => `[${line.line}](${rootUrl}${report.file}#L${line.line})`,
+    );
+
     const functionCoverage = formatCoverageLine(
       report.functions,
       previousRunResult ? getCoverage(previousRunResult.functions) : 0,
     );
-    const missedFunctions = report.functions.details
-      .filter((line) => line.hit === 0)
-      .map((line) => `[${line.name}](${rootUrl}${report.file}#L${line.line})`)
-      .join("<br />");
+    const missedFunctions = formatDetails(
+      report.functions.details.filter((line) => line.hit === 0),
+      (line) => `[${line.name}](${rootUrl}${report.file}#L${line.line})`,
+    );
     const branchCoverage = formatCoverageLine(
       report.branches,
       previousRunResult ? getCoverage(previousRunResult.branches) : 0,
