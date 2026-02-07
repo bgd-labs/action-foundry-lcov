@@ -17,5 +17,5 @@ outputs:
     description: "The md lcov report"
 
 runs:
-  using: "node20"
+  using: "node24"
   main: dist/action.js
