@@ -100,7 +100,8 @@ export function generateCoverageDiff(
     );
     const missedFunctions = formatDetails(
       report.functions.details.filter((line) => line.hit === 0),
-      (line) => `[${line.name}](${rootUrl}${report.file}#L${line.line})`,
+      (line) =>
+        `[${line.name.split(".").pop()}](${rootUrl}${report.file}#L${line.line})`,
     );
     const branchCoverage = formatCoverageLine(
       report.branches,
