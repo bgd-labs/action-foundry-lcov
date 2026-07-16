@@ -48,6 +48,10 @@ function formatCoverageLine({ hit, found }, previousCoverage) {
 function findFile(report, file) {
   return report.find((r) => r.file === file);
 }
+function formatFileLink(file, rootUrl) {
+  const name = file.split("/").pop().replace(/\.[^.]+$/, "");
+  return `[${name}](${rootUrl}${file})`;
+}
 function getCoverage({ hit, found }) {
   return found == 0 ? 1 : hit / found;
 }
@@ -81,7 +85,7 @@ function generateCoverageDiff(before, after, { rootUrl }) {
       report.branches,
       previousRunResult ? getCoverage(previousRunResult.branches) : 0
     );
-    content += `| ${report.file} | ${lineCoverage}<br />${missedLines} | ${functionCoverage}<br />${missedFunctions} | ${branchCoverage} |
+    content += `| ${formatFileLink(report.file, rootUrl)} | ${lineCoverage}<br />${missedLines} | ${functionCoverage}<br />${missedFunctions} | ${branchCoverage} |
 `;
   }
   return content;

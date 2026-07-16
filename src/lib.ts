@@ -48,6 +48,14 @@ function findFile(report: Lcov, file: string) {
   return report.find((r) => r.file === file);
 }
 
+/**
+ * renders the file as a link, showing only the file name without extension
+ */
+function formatFileLink(file: string, rootUrl: string) {
+  const name = file.split("/").pop()!.replace(/\.[^.]+$/, "");
+  return `[${name}](${rootUrl}${file})`;
+}
+
 type GetCoverageParams = {
   hit: number;
   found: number;
@@ -99,7 +107,7 @@ export function generateCoverageDiff(
       previousRunResult ? getCoverage(previousRunResult.branches) : 0,
     );
 
-    content += `| ${report.file} | ${lineCoverage}<br />${missedLines} | ${functionCoverage}<br />${missedFunctions} | ${branchCoverage} |\n`;
+    content += `| ${formatFileLink(report.file, rootUrl)} | ${lineCoverage}<br />${missedLines} | ${functionCoverage}<br />${missedFunctions} | ${branchCoverage} |\n`;
   }
   return content;
 }
