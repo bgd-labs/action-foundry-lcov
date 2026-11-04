@@ -112,3 +112,41 @@ export function generateCoverageDiff(
   }
   return content;
 }
+
+/**
+ * aggregated line coverage over all files of a report
+ */
+export function getTotalCoverage(report: Lcov) {
+  return getCoverage(
+    report.reduce(
+      (acc, r) => ({
+        hit: acc.hit + r.lines.hit,
+        found: acc.found + r.lines.found,
+      }),
+      { hit: 0, found: 0 },
+    ),
+  );
+}
+
+function formatPercent(value: number) {
+  return (
+    Number(value * 100).toLocaleString("en-US", {
+      maximumFractionDigits: 2,
+    }) + "%"
+  );
+}
+
+/**
+ * renders the total line coverage of `after` and, if `before` is not empty,
+ * the difference in percentage points to `before`
+ */
+export function generateTotalCoverage(before: Lcov, after: Lcov) {
+  const current = getTotalCoverage(after);
+  let content = formatPercent(current);
+  if (before.length) {
+    const diff = current - getTotalCoverage(before);
+    if (diff !== 0)
+      content += ` (${diff > 0 ? UP : DOWN}${formatPercent(Math.abs(diff))})`;
+  }
+  return content;
+}

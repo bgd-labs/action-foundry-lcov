@@ -66,6 +66,34 @@ function generateCoverageDiff(before, after, { rootUrl }) {
   }
   return content;
 }
+function getTotalCoverage(report) {
+  return getCoverage(
+    report.reduce(
+      (acc, r) => ({
+        hit: acc.hit + r.lines.hit,
+        found: acc.found + r.lines.found
+      }),
+      { hit: 0, found: 0 }
+    )
+  );
+}
+function formatPercent(value) {
+  return Number(value * 100).toLocaleString("en-US", {
+    maximumFractionDigits: 2
+  }) + "%";
+}
+function generateTotalCoverage(before, after) {
+  const current = getTotalCoverage(after);
+  let content = formatPercent(current);
+  if (before.length) {
+    const diff = current - getTotalCoverage(before);
+    if (diff !== 0)
+      content += ` (${diff > 0 ? UP : DOWN}${formatPercent(Math.abs(diff))})`;
+  }
+  return content;
+}
 export {
-  generateCoverageDiff
+  generateCoverageDiff,
+  generateTotalCoverage,
+  getTotalCoverage
 };

@@ -1,5 +1,5 @@
 import { expect, it, describe } from "vitest";
-import { generateCoverageDiff } from "./lib";
+import { generateCoverageDiff, generateTotalCoverage } from "./lib";
 import { parseLcov } from "./lcov-parse";
 
 describe("lib", () => {
@@ -18,6 +18,19 @@ describe("lib", () => {
         {
           rootUrl: "https://github.com/",
         },
+      ),
+    ).toMatchSnapshot();
+  });
+  it("should render total coverage without diff for empty root", async () => {
+    expect(
+      generateTotalCoverage([], await parseLcov("./mocks/lcov.info")),
+    ).toMatchSnapshot();
+  });
+  it("should render total coverage with diff for existing root", async () => {
+    expect(
+      generateTotalCoverage(
+        await parseLcov("./mocks/lcov.info.original"),
+        await parseLcov("./mocks/lcov.info"),
       ),
     ).toMatchSnapshot();
   });

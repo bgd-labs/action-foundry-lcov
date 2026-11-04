@@ -20,7 +20,9 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/lib.ts
 var lib_exports = {};
 __export(lib_exports, {
-  generateCoverageDiff: () => generateCoverageDiff
+  generateCoverageDiff: () => generateCoverageDiff,
+  generateTotalCoverage: () => generateTotalCoverage,
+  getTotalCoverage: () => getTotalCoverage
 });
 module.exports = __toCommonJS(lib_exports);
 function formatCoverage(coverage) {
@@ -90,7 +92,35 @@ function generateCoverageDiff(before, after, { rootUrl }) {
   }
   return content;
 }
+function getTotalCoverage(report) {
+  return getCoverage(
+    report.reduce(
+      (acc, r) => ({
+        hit: acc.hit + r.lines.hit,
+        found: acc.found + r.lines.found
+      }),
+      { hit: 0, found: 0 }
+    )
+  );
+}
+function formatPercent(value) {
+  return Number(value * 100).toLocaleString("en-US", {
+    maximumFractionDigits: 2
+  }) + "%";
+}
+function generateTotalCoverage(before, after) {
+  const current = getTotalCoverage(after);
+  let content = formatPercent(current);
+  if (before.length) {
+    const diff = current - getTotalCoverage(before);
+    if (diff !== 0)
+      content += ` (${diff > 0 ? UP : DOWN}${formatPercent(Math.abs(diff))})`;
+  }
+  return content;
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  generateCoverageDiff
+  generateCoverageDiff,
+  generateTotalCoverage,
+  getTotalCoverage
 });

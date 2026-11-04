@@ -47,3 +47,7 @@ exports[`lib > should generate a well formatted report with existing root 1`] = 
 | [RescuableBase](https://github.com/src/contracts/utils/RescuableBase.sol) | \\\${\\\\color{green}100\\\\\\\\%}\\$<br />\\$8 / 8\\$<br /> | \\\${\\\\color{green}100\\\\\\\\%}\\$<br />\\$2 / 2\\$<br /> | \\\${\\\\color{green}100\\\\\\\\%}\\$<br />\\$1 / 1\\$ |
 "
 `;
+
+exports[`lib > should render total coverage with diff for existing root 1`] = `"67.63% (↓0.94%)"`;
+
+exports[`lib > should render total coverage without diff for empty root 1`] = `"67.63%"`;
